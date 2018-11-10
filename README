@@ -1,0 +1,44 @@
+This tool is created using the HaveIBeenPawned APIv2
+This tool is able to check email addresses and websites and also the password.
+
+Requirement:
+Install tabulate library using pip3
+> sudo apt-get install python-pip3
+> pip3 install tabulate
+
+or 
+
+Run "install_requirements.sh"
+
+Guide:
+	-h	=	shows help message
+	-e	=	single email or multiple email input. ex ./amipawned -e example1@gmail.com,example1@gmail.com
+	-l	=	single site, multiple site or 'all' input. ex ./amipawned -l site1,site2 or ./amipawned -l all
+	-f	=	input mail or site file lists; file's can be anywhere and mail/site should be in the format as 'sample_email_list' or 'sample_site_list'
+	-o	=	output result; result by default will in the directory where 'amipawned' is located unless if specify
+	-p 	=	password checking
+
+Usage:
+	For single or multiple email;
+	./amipawned example_email1@email.com,example_email2@email.com
+
+	For single or multiple email;
+	./amipawned -e example_email1@email.com,example_email2@email.com
+
+	For single or multiple breached site;
+	./amipawned -e site_name1,site_name2
+
+	For single or multiple email output to a file;
+	./amipawned -l example_email1@email.com,example_email2@email.com -o result_output
+
+	For single or multiple breached site output to a file;
+	./amipawned -l site_name1,site_name2 -o result_output
+
+	Using an email list or site list;
+	./amipawned -f file_mails_or_sites
+
+	Using an email list or site list, output result to a file;
+	./amipawned -f file_mails_or_sites -o result_output
+
+	Checkiing password
+	./amipawned -p
