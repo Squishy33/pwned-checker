@@ -6,12 +6,12 @@
 
 
 tabulate_install(){
-	if python3 -c 'import pkgutil; exit(not pkgutil.find_loader("tabulate"))' &> /dev/null; then
+	if sudo python3 -c 'import pkgutil; exit(not pkgutil.find_loader("tabulate"))' &> /dev/null; then
 		echo "[*] You have it already!!!"
 		echo "[*] You can start using 'amipawned' now!!!"
 	else
 		echo "[!] Installing tabulate" >> install.log
-		pip3 install tabulate >> install.log
+		sudo pip3 install tabulate >> install.log
 		echo "[!] Installing tabulate Completed!!!" >> install.log
 		echo 
 		echo "[*] Your ready now!!!" 
@@ -31,14 +31,14 @@ echo 'Update Done!!!' >> install.log
 echo
 echo '[!] Installing Dependencies...'
 echo '[!] Checking pip3....'
-if dpkg -S `which pip3` &> /dev/null; then
+if sudo dpkg -S `which pip3` &> /dev/null; then
 	echo "[*] You have pip3..."
 	echo
 	echo "[!] Installing Tabulate...."
 	tabulate_install
 else
 	echo "[!] Installing pip3..."
-	pip3_install
+	sudo pip3_install
 	echo
 	echo "[!] Installing Tabulate...."
 	tabulate_install
